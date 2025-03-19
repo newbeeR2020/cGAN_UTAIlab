@@ -43,7 +43,7 @@ class Generator(nn.Module):
         return img
 
 # モデルのロード
-generator = torch.load("GANgenerator.pth", map_location=device)
+generator = torch.load("GANgenerator.pth", map_location=device, weights_only=False)
 generator.eval()
 
 st.title("cGAN Image Generator")
