@@ -43,8 +43,7 @@ class Generator(nn.Module):
         return img
 
 # モデルのロード
-generator = Generator(latent_dim, n_classes).to(device)
-generator.load_state_dict(torch.load("GANgenerator.pth", map_location=device))
+generator = torch.load("GANgenerator.pth", map_location=device)
 generator.eval()
 
 st.title("cGAN Image Generator")
